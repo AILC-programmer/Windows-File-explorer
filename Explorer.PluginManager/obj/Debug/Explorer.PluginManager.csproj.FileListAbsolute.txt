@@ -1,0 +1,11 @@
+J:\C#\Explorer\Explorer.PluginManager\bin\Debug\Explorer.PluginManager.dll
+J:\C#\Explorer\Explorer.PluginManager\bin\Debug\Explorer.PluginManager.pdb
+J:\C#\Explorer\Explorer.PluginManager\obj\Debug\Explorer.PluginManager.csproj.CoreCompileInputs.cache
+J:\C#\Explorer\Explorer.PluginManager\obj\Debug\Explorer.PluginManager.dll
+J:\C#\Explorer\Explorer.PluginManager\obj\Debug\Explorer.PluginManager.pdb
+J:\C#\Explorer\Explorer.PluginManager\obj\Debug\Explorer.PluginManager.csproj.AssemblyReference.cache
+D:\Projects\C#\Explorer\Explorer.PluginManager\bin\Debug\Explorer.PluginManager.dll
+D:\Projects\C#\Explorer\Explorer.PluginManager\bin\Debug\Explorer.PluginManager.pdb
+D:\Projects\C#\Explorer\Explorer.PluginManager\obj\Debug\Explorer.PluginManager.csproj.CoreCompileInputs.cache
+D:\Projects\C#\Explorer\Explorer.PluginManager\obj\Debug\Explorer.PluginManager.dll
+D:\Projects\C#\Explorer\Explorer.PluginManager\obj\Debug\Explorer.PluginManager.pdb

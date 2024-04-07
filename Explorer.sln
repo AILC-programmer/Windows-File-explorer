@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Explorer", "Explorer\Explorer.csproj", "{33DB3039-F848-48C5-86A8-169508BEBE02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Explorer.PluginManager", "Explorer.PluginManager\Explorer.PluginManager.csproj", "{A74061EC-2433-4403-9BF7-563D48DA845F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33DB3039-F848-48C5-86A8-169508BEBE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DB3039-F848-48C5-86A8-169508BEBE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DB3039-F848-48C5-86A8-169508BEBE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DB3039-F848-48C5-86A8-169508BEBE02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A74061EC-2433-4403-9BF7-563D48DA845F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A74061EC-2433-4403-9BF7-563D48DA845F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A74061EC-2433-4403-9BF7-563D48DA845F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A74061EC-2433-4403-9BF7-563D48DA845F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D1B790B-AE34-4300-93B2-4C38513A7481}
+	EndGlobalSection
+EndGlobal
