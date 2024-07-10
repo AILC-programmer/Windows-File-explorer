@@ -65,7 +65,7 @@ namespace Explorer.Tools
                                     break;
                                 else if (result == DialogResult.One || result == DialogResult.Two || result == DialogResult.TwoToAll)
                                     continue;
-                                else if(result == DialogResult.Three || result == DialogResult.ThreeToAll)
+                                else if (result == DialogResult.Three || result == DialogResult.ThreeToAll)
                                 {
                                     newPath = Path.Combine(currentPath, Extentions.Tools.NameHandler.GetCopyOfName(fileInfo));
                                     File.Copy(fileInfo.FullName, newPath);
@@ -176,6 +176,27 @@ namespace Explorer.Tools
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public static void Delete(IEnumerable<object> values)
+        {
+            if (Extentions.MessageBox.Run("Are you sure about delete it!", "Delete", null, "Yes", "No") == DialogResult.One)
+            {
+                foreach (var item in values)
+                {
+                    if (item is DirectoryInfo)
+                    {
+                        var directoryInfo = item as DirectoryInfo;
+                        Directory.Delete(directoryInfo.FullName, true);
+                    }
+                    else if (item is FileInfo)
+                    {
+                        var fileInfo = item as FileInfo;
+
+                        File.Delete(fileInfo.FullName);
+                    }
+                }
             }
         }
 

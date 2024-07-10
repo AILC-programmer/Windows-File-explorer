@@ -1,4 +1,5 @@
 ﻿#region usings
+using Explorer.Tools;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -126,7 +127,7 @@ namespace Explorer
             {
                 lst.Add(item.Tag);
             }
-            Tools.Entities.Delete(lst);
+            Tools.EntitiesJobs.Delete(lst);
 
             loadFAF(PathToolStripLabel.Tag.ToString());
         }
@@ -155,18 +156,37 @@ namespace Explorer
         {
             try
             {
-                var txt = SearchToolStripTextBox.Text;
+                string txt = SearchToolStripTextBox.Text.Trim();
+                string path = Properties.Settings.Default.lastPath;
 
                 if (string.IsNullOrEmpty(txt))
                 {
-                    loadFAF(Properties.Settings.Default.lastPath);
+                    loadFAF(path);
                     return;
                 }
-                else if (Directory.Exists(txt))
+                else if (txt.StartsWith("/f"))
                 {
-                    PathToolStripLabel.Tag = txt; 
-                    PathToolStripLabel.Text = $"PC >> {txt}";
-                    ItemsNumberLabel.Text = $"File: {Tools.Entities.SetEntities(ExplorerMListView, txt)}";
+                    int res = FindPaths.FindFiles(path, txt.Substring(2).Trim());
+                    if (res < 1) return;
+                    PathToolStripLabel.Text = $"PC >> Search files";
+                    ItemsNumberLabel.Text = res.ToString();
+                    Framework.SetEntities(ExplorerMListView, FindPaths.FoundedEntities);
+                }
+                else if (txt.StartsWith("/d"))
+                {
+                    var res = FindPaths.FindDirectories(path, txt.Substring(2).Trim());
+                    if (res < 1) return;
+                    PathToolStripLabel.Text = $"PC >> Search directories (folders)";
+                    ItemsNumberLabel.Text = res.ToString();
+                    Framework.SetEntities(ExplorerMListView, FindPaths.FoundedEntities);
+                }
+                else
+                {
+                    int res = FindPaths.FindAll(path, txt);
+                    if (res < 1) return;
+                    PathToolStripLabel.Text = $"PC >> Search";
+                    ItemsNumberLabel.Text = res.ToString();
+                    Framework.SetEntities(ExplorerMListView, FindPaths.FoundedEntities);
                 }
             }
             catch (Exception ex)
@@ -186,6 +206,10 @@ namespace Explorer
             FileDropDownButton.Enabled  = state;
         }
 
+        /// <summary>
+        /// Load file and folder to ExplorerMListView.
+        /// </summary>
+        /// <param name="path">That directory path you want to load.</param>
         private void loadFAF(string path)
         {
             try
@@ -197,7 +221,7 @@ namespace Explorer
                 Properties.Settings.Default.lastPath = path;
                 Properties.Settings.Default.Save();
 
-                ItemsNumberLabel.Text = $"Item(s): {Tools.Entities.SetEntities(ExplorerMListView, path)}";
+                ItemsNumberLabel.Text = $"Item(s): {Framework.SetEntities(ExplorerMListView, path)}";
             }
             catch (Exception ex)
             {
@@ -212,7 +236,7 @@ namespace Explorer
             try
             {
                 ToolsVisible(false);
-                ItemsNumberLabel.Text = Tools.Entities.SetEntities(ExplorerMListView, "Drives").ToString();
+                ItemsNumberLabel.Text = Framework.SetEntities(ExplorerMListView, "Drives").ToString();
                 PathToolStripLabel.Text = "PC";
             }
             catch (Exception ex)
