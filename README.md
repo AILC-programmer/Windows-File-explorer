@@ -1,20 +1,16 @@
-#FileExplorer
-The file explorer for Windows. You can have some plugins for this file explorer.
+# File Explorer
+This is a program for viewing files and folders on a computer's hard drive. It provides a user-friendly interface for managing files and folders, including:
 
-The application’s UI is implemented by metromodernui.1.4.0 package, which is available on the NuGet package.
+- Copying files and folders
+- Moving files and folders
+- Renaming files and folders
+- Deleting files and folders
+- Creating new folders
+- Creating new text files
 
-If you want to create some plugins for this application, you can use the “Explorer.PluginManager” library:
+<hr>
 
-– Interfaces:
-
-  ICommand: You must implement the “ICommand” interface on one of the classes. This interface has one method called “run”, which can run a form or some queries from that library.
-
-– Attributes:
-
-  Command: You must use the “Command” attribute on the class that implements the ICommand interface. You can set the plugin name with this attribute.
-
-  Icon: This attribute takes a string path of the icon file. The extension of icon file must be a PNG.
-
-  ToolTipText: This attribute takes a string text and sets it as the tooltip.
-
-  ShortcutKeys: This attribute takes a char shortcut. The character should be a capital letter.
+The program is built using MetroFramework, a cross-platform UI framework for .NET applications.<br>
+MetroFramework provides a modern and consistent user interface that is easy to use and visually appealing.<br>
+<hr>
+The program is also designed to be extensible, allowing users to create plugins to add new features and functionality.
